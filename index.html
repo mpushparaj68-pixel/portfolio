@@ -19,12 +19,10 @@ body{
     overflow-x:hidden;
 }
 
-/* Scroll height */
 .scroll-area{
     height:500vh;
 }
 
-/* Canvas Background */
 canvas{
     position:fixed;
     top:0;
@@ -33,10 +31,9 @@ canvas{
     height:100vh;
     z-index:-1;
     pointer-events:none;
-    opacity:0.12; /* watermark */
+    opacity:0.18;
 }
 
-/* Content */
 .container{
     width:85%;
     max-width:1000px;
@@ -44,33 +41,15 @@ canvas{
     padding:80px 20px;
 }
 
-section{
-    margin-bottom:70px;
-}
+section{ margin-bottom:70px; }
 
-h1{
-    font-size:42px;
-    margin-bottom:10px;
-}
+h1{ font-size:42px; margin-bottom:10px; }
+h2{ font-size:24px; margin-bottom:20px; color:#00bfff; }
 
-h2{
-    font-size:24px;
-    margin-bottom:20px;
-    color:#00bfff;
-}
+p{ line-height:1.7; margin-bottom:10px; }
 
-p{
-    line-height:1.7;
-    margin-bottom:10px;
-}
-
-ul{
-    list-style:none;
-}
-
-ul li{
-    margin-bottom:8px;
-}
+ul{ list-style:none; }
+ul li{ margin-bottom:8px; }
 
 .grid{
     display:grid;
@@ -89,7 +68,7 @@ footer{
 <body>
 
 <div class="scroll-area"></div>
-<canvas id="animationCanvas"></canvas>
+<canvas id="canvas"></canvas>
 
 <div class="container">
 
@@ -113,121 +92,73 @@ Quick learner with good problem-solving ability and teamwork skills.
 </p>
 </section>
 
-<section>
-<h2>Education</h2>
-<div class="grid">
-<div>
-<strong>10th Standard</strong>
-<p>Sri Krishna Matric Higher Secondary School</p>
-<p>100% (2021)</p>
 </div>
 
-<div>
-<strong>12th Standard</strong>
-<p>83.7%</p>
-</div>
-
-<div>
-<strong>B.E – Electronics and Communication Engineering</strong>
-<p>2023 – 2027</p>
-<p>CGPA: 7.10</p>
-</div>
-</div>
-</section>
-
-<section>
-<h2>Technical Skills</h2>
-<ul>
-<li>✔ Python</li>
-<li>✔ C Programming</li>
-</ul>
-</section>
-
-<section>
-<h2>Soft Skills</h2>
-<ul>
-<li>✔ Management Skills</li>
-<li>✔ Negotiation</li>
-<li>✔ Critical Thinking</li>
-<li>✔ Communication Skills</li>
-</ul>
-</section>
-
-<section>
-<h2>Languages</h2>
-<ul>
-<li>✔ Tamil</li>
-<li>✔ English</li>
-</ul>
-</section>
-
-<section>
-<h2>Hobbies</h2>
-<ul>
-<li>🎮 Games</li>
-<li>🎵 Music</li>
-<li>🎬 Movies</li>
-</ul>
-</section>
-
-</div>
-
-<footer>
-© 2026 Pushparaj M
-</footer>
+<footer>© 2026 Pushparaj M</footer>
 
 <script>
 const frameCount = 240;
-const canvas = document.getElementById("animationCanvas");
+const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const images = [];
-let imagesLoaded = 0;
+/* Current loaded frame cache */
+const imageCache = {};
+let currentFrame = 0;
 
-/* Load Images */
-for(let i=1;i<=frameCount;i++){
-    const img = new Image();
-    const frameNumber = String(i).padStart(3,'0');
-    img.src = frames/ezgif-frame-${frameNumber}.jpg;
-
-    img.onload = () => {
-        imagesLoaded++;
-        if(imagesLoaded === 1){
-            context.drawImage(img,0,0,canvas.width,canvas.height);
+/* Load only when needed */
+function loadImage(index){
+    return new Promise(resolve=>{
+        if(imageCache[index]){
+            resolve(imageCache[index]);
+            return;
         }
-    };
 
-    images.push(img);
+        const img = new Image();
+        const num = String(index+1).padStart(3,'0');
+        img.src = frames/ezgif-frame-${num}.jpg;
+
+        img.onload = ()=>{
+            imageCache[index] = img;
+            resolve(img);
+        };
+    });
 }
 
-/* Draw Frame */
-function renderFrame(index){
+/* Render */
+async function render(index){
+    const img = await loadImage(index);
     context.clearRect(0,0,canvas.width,canvas.height);
-    context.drawImage(images[index],0,0,canvas.width,canvas.height);
+    context.drawImage(img,0,0,canvas.width,canvas.height);
 }
 
 /* Scroll Control */
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll",()=>{
     const scrollTop = window.scrollY;
     const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const scrollFraction = scrollTop / maxScroll;
+    const progress = scrollTop / maxScroll;
 
     const frameIndex = Math.min(
         frameCount - 1,
-        Math.floor(scrollFraction * frameCount)
+        Math.floor(progress * frameCount)
     );
 
-    requestAnimationFrame(() => renderFrame(frameIndex));
+    if(frameIndex !== currentFrame){
+        currentFrame = frameIndex;
+        render(frameIndex);
+    }
 });
 
-/* Resize Fix */
-window.addEventListener("resize", () => {
+/* Load first frame immediately */
+render(0);
+
+/* Resize */
+window.addEventListener("resize",()=>{
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    renderFrame(0);
+    render(currentFrame);
 });
 </script>
 
