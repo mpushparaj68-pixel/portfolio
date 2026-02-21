@@ -98,69 +98,40 @@ Quick learner with good problem-solving ability and teamwork skills.
 
 <script>
 const frameCount = 240;
-const canvas = document.getElementById("canvas");
-const context = canvas.getContext("2d");
+const img = document.getElementById("animation-frame");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-/* Current loaded frame cache */
-const imageCache = {};
 let currentFrame = 0;
 
-/* Load only when needed */
-function loadImage(index){
-    return new Promise(resolve=>{
-        if(imageCache[index]){
-            resolve(imageCache[index]);
-            return;
-        }
-
-        const img = new Image();
-        const num = String(index+1).padStart(3,'0');
-        img.src = frames/ezgif-frame-${num}.jpg;
-
-        img.onload = ()=>{
-            imageCache[index] = img;
-            resolve(img);
-        };
-    });
+/* Preload frames */
+const preloadFrames = [];
+for (let i = 1; i <= frameCount; i++) {
+    const frameNumber = String(i).padStart(3, '0');
+    const image = new Image();
+    image.src = frames/ezgif-frame-${frameNumber}.jpg;
+    preloadFrames.push(image);
 }
 
-/* Render */
-async function render(index){
-    const img = await loadImage(index);
-    context.clearRect(0,0,canvas.width,canvas.height);
-    context.drawImage(img,0,0,canvas.width,canvas.height);
-}
-
-/* Scroll Control */
-window.addEventListener("scroll",()=>{
+/* Scroll Animation */
+function updateFrame() {
     const scrollTop = window.scrollY;
-    const maxScroll = document.body.scrollHeight - window.innerHeight;
-    const progress = scrollTop / maxScroll;
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+    const scrollProgress = scrollTop / maxScroll;
 
     const frameIndex = Math.min(
         frameCount - 1,
-        Math.floor(progress * frameCount)
+        Math.floor(scrollProgress * frameCount)
     );
 
-    if(frameIndex !== currentFrame){
+    if (frameIndex !== currentFrame) {
         currentFrame = frameIndex;
-        render(frameIndex);
+        const frameNumber = String(frameIndex + 1).padStart(3, '0');
+        img.src = frames/ezgif-frame-${frameNumber}.jpg;
     }
-});
+}
 
-/* Load first frame immediately */
-render(0);
-
-/* Resize */
-window.addEventListener("resize",()=>{
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    render(currentFrame);
+/* Smooth scroll response */
+window.addEventListener("scroll", () => {
+    requestAnimationFrame(updateFrame);
 });
 </script>
-
-</body>
-</html>
