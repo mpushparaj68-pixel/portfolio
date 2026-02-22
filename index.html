@@ -14,18 +14,15 @@
         }
 
         body {
-            background: #0f172a;
-            color: #1f2933;
+            background: #020617;
+            color: #e5e7eb;
             overflow-x: hidden;
         }
 
         /* ---------- BACKGROUND ANIMATION ---------- */
         #bg-animation {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             z-index: 0;
             opacity: 0.08;
             pointer-events: none;
@@ -46,38 +43,45 @@
             z-index: 2;
             max-width: 1100px;
             margin: auto;
-            padding: 60px 20px;
+            padding: 80px 20px;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 14px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        section {
+            margin-bottom: 70px;
         }
 
         h1 {
-            font-size: 42px;
-            color: #0f172a;
+            font-size: 46px;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #f8fafc;
         }
 
         h2 {
-            margin-bottom: 15px;
-            color: #1e40af;
-            border-bottom: 2px solid #e5e7eb;
-            padding-bottom: 6px;
+            font-size: 26px;
+            margin-bottom: 18px;
+            color: #60a5fa;
+            border-left: 4px solid #3b82f6;
+            padding-left: 12px;
         }
 
         p {
-            line-height: 1.7;
-            margin-bottom: 10px;
+            line-height: 1.8;
+            font-size: 16px;
+            max-width: 900px;
+        }
+
+        .contact {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #cbd5f5;
+            font-size: 15px;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
         }
 
         ul {
@@ -88,20 +92,10 @@
             margin-bottom: 8px;
         }
 
-        .header {
-            text-align: center;
-        }
-
-        .contact {
-            margin-top: 10px;
-            font-weight: 500;
-            color: #374151;
-        }
-
         footer {
             text-align: center;
-            padding: 30px;
-            color: #cbd5f5;
+            padding: 40px 0;
+            color: #94a3b8;
             font-size: 14px;
         }
     </style>
@@ -116,18 +110,17 @@
 <div class="container">
 
     <!-- HEADER -->
-    <div class="card header">
+    <section>
         <h1>Pushparaj M</h1>
-        <p class="contact">
-            📞 +91 7010165150 | ✉️ mpushparaj68@gmail.com
-        </p>
-        <p class="contact">
+        <div class="contact">
+            📞 +91 7010165150 &nbsp; | &nbsp;
+            ✉️ mpushparaj68@gmail.com <br>
             Nangathur, Vikkravandi (Taluk), Villupuram – 605202
-        </p>
-    </div>
+        </div>
+    </section>
 
     <!-- PROFILE -->
-    <div class="card">
+    <section>
         <h2>Profile</h2>
         <p>
             Enthusiastic B.E. Electronics and Communication Engineering student
@@ -136,34 +129,34 @@
             apply my technical knowledge and improve my practical skills.
             Quick learner with good problem-solving ability and teamwork skills.
         </p>
-    </div>
+    </section>
 
     <!-- EDUCATION -->
-    <div class="card">
+    <section>
         <h2>Education</h2>
         <div class="grid">
             <div>
-                <h3>Bachelor of Engineering (ECE)</h3>
-                <p>2023 – 2027</p>
-                <p>CGPA: 7.10</p>
+                <strong>Bachelor of Engineering (ECE)</strong><br>
+                2023 – 2027<br>
+                CGPA: 7.10
             </div>
             <div>
-                <h3>Higher Secondary (12th)</h3>
-                <p>Sri Krishna Matric Higher Secondary School</p>
-                <p>2022 – 2023</p>
-                <p>83.7%</p>
+                <strong>Higher Secondary (12th)</strong><br>
+                Sri Krishna Matric Higher Secondary School<br>
+                2022 – 2023<br>
+                83.7%
             </div>
             <div>
-                <h3>Secondary (10th)</h3>
-                <p>Sri Krishna Matric Higher Secondary School</p>
-                <p>2021</p>
-                <p>100%</p>
+                <strong>Secondary (10th)</strong><br>
+                Sri Krishna Matric Higher Secondary School<br>
+                2021<br>
+                100%
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- SKILLS -->
-    <div class="card">
+    <section>
         <h2>Technical Skills</h2>
         <ul>
             <li>Python</li>
@@ -171,10 +164,10 @@
             <li>Electronic Circuits</li>
             <li>Communication Systems</li>
         </ul>
-    </div>
+    </section>
 
     <!-- SOFT SKILLS -->
-    <div class="card">
+    <section>
         <h2>Soft Skills</h2>
         <ul>
             <li>Management Skills</li>
@@ -182,26 +175,26 @@
             <li>Critical Thinking</li>
             <li>Communication Skills</li>
         </ul>
-    </div>
+    </section>
 
     <!-- LANGUAGES -->
-    <div class="card">
+    <section>
         <h2>Languages</h2>
         <ul>
             <li>Tamil</li>
             <li>English</li>
         </ul>
-    </div>
+    </section>
 
     <!-- HOBBIES -->
-    <div class="card">
+    <section>
         <h2>Hobbies & Interests</h2>
         <ul>
             <li>Games</li>
             <li>Music</li>
             <li>Movies</li>
         </ul>
-    </div>
+    </section>
 
 </div>
 
