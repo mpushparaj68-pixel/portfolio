@@ -1,223 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Pushparaj M | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Pushparaj M | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Segoe UI", Arial, sans-serif;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
 
-        body {
-            background: #020617;
-            color: #e5e7eb;
-            overflow-x: hidden;
-        }
+body {
+    background: #020617;
+    color: #e5e7eb;
+    overflow-x: hidden;
+}
 
-        /* ---------- BACKGROUND ANIMATION ---------- */
-        #bg-animation {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            opacity: 0.08;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* ---------- BACKGROUND ANIMATION ---------- */
+#bg-animation {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.08;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        #bg-animation img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
+#bg-animation img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
 
-        /* ---------- CONTENT ---------- */
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 1100px;
-            margin: auto;
-            padding: 80px 20px;
-        }
+/* ---------- CONTENT ---------- */
+main {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 20px;
+}
 
-        section {
-            margin-bottom: 70px;
-        }
+section {
+    margin-bottom: 70px;
+}
 
-        h1 {
-            font-size: 46px;
-            text-align: center;
-            margin-bottom: 10px;
-            color: #f8fafc;
-        }
+/* ---------- TEXT ---------- */
+h1 {
+    font-size: 46px;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #f8fafc;
+}
 
-        h2 {
-            font-size: 26px;
-            margin-bottom: 18px;
-            color: #60a5fa;
-            border-left: 4px solid #3b82f6;
-            padding-left: 12px;
-        }
+.contact {
+    text-align: center;
+    color: #cbd5f5;
+    margin-bottom: 70px;
+    line-height: 1.6;
+}
 
-        p {
-            line-height: 1.8;
-            font-size: 16px;
-            max-width: 900px;
-        }
+h2 {
+    font-size: 26px;
+    color: #60a5fa;
+    margin-bottom: 16px;
+}
 
-        .contact {
-            text-align: center;
-            margin-bottom: 50px;
-            color: #cbd5f5;
-            font-size: 15px;
-        }
+p {
+    line-height: 1.8;
+    max-width: 900px;
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
-        }
+ul {
+    padding-left: 20px;
+}
 
-        ul {
-            padding-left: 18px;
-        }
+li {
+    margin-bottom: 8px;
+}
 
-        li {
-            margin-bottom: 8px;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
+}
 
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #94a3b8;
-            font-size: 14px;
-        }
-    </style>
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #94a3b8;
+    font-size: 14px;
+}
+</style>
 </head>
+
 <body>
 
-<!-- BACKGROUND ANIMATION -->
+<!-- BACKGROUND -->
 <div id="bg-animation">
-    <img id="frame" src="frames/ezgif-frame-001.jpg" alt="Background Animation">
+    <img id="frame" src="frames/ezgif-frame-001.jpg">
 </div>
 
-<div class="container">
+<main>
 
-    <!-- HEADER -->
-    <section>
-        <h1>Pushparaj M</h1>
-        <div class="contact">
-            📞 +91 7010165150 &nbsp; | &nbsp;
-            ✉️ mpushparaj68@gmail.com <br>
-            Nangathur, Vikkravandi (Taluk), Villupuram – 605202
-        </div>
-    </section>
-
-    <!-- PROFILE -->
-    <section>
-        <h2>Profile</h2>
-        <p>
-            Enthusiastic B.E. Electronics and Communication Engineering student
-            with strong basics in electronic circuits and communication systems.
-            Eager to start my career in a core electronics company where I can
-            apply my technical knowledge and improve my practical skills.
-            Quick learner with good problem-solving ability and teamwork skills.
-        </p>
-    </section>
-
-    <!-- EDUCATION -->
-    <section>
-        <h2>Education</h2>
-        <div class="grid">
-            <div>
-                <strong>Bachelor of Engineering (ECE)</strong><br>
-                2023 – 2027<br>
-                CGPA: 7.10
-            </div>
-            <div>
-                <strong>Higher Secondary (12th)</strong><br>
-                Sri Krishna Matric Higher Secondary School<br>
-                2022 – 2023<br>
-                83.7%
-            </div>
-            <div>
-                <strong>Secondary (10th)</strong><br>
-                Sri Krishna Matric Higher Secondary School<br>
-                2021<br>
-                100%
-            </div>
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section>
-        <h2>Technical Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>C Programming</li>
-            <li>Electronic Circuits</li>
-            <li>Communication Systems</li>
-        </ul>
-    </section>
-
-    <!-- SOFT SKILLS -->
-    <section>
-        <h2>Soft Skills</h2>
-        <ul>
-            <li>Management Skills</li>
-            <li>Negotiation</li>
-            <li>Critical Thinking</li>
-            <li>Communication Skills</li>
-        </ul>
-    </section>
-
-    <!-- LANGUAGES -->
-    <section>
-        <h2>Languages</h2>
-        <ul>
-            <li>Tamil</li>
-            <li>English</li>
-        </ul>
-    </section>
-
-    <!-- HOBBIES -->
-    <section>
-        <h2>Hobbies & Interests</h2>
-        <ul>
-            <li>Games</li>
-            <li>Music</li>
-            <li>Movies</li>
-        </ul>
-    </section>
-
+<!-- HEADER -->
+<h1>Pushparaj M</h1>
+<div class="contact">
+    📞 +91 7010165150 &nbsp; | &nbsp;
+    ✉️ mpushparaj68@gmail.com <br>
+    Nangathur, Vikkravandi (Taluk), Villupuram – 605202
 </div>
+
+<!-- PROFILE -->
+<section>
+<h2>Profile</h2>
+<p>
+Enthusiastic B.E. Electronics and Communication Engineering student
+with strong basics in electronic circuits and communication systems.
+Eager to start my career in a core electronics company where I can
+apply my technical knowledge and improve my practical skills.
+Quick learner with good problem-solving ability and teamwork skills.
+</p>
+</section>
+
+<!-- EDUCATION -->
+<section>
+<h2>Education</h2>
+<div class="grid">
+<div>
+<strong>B.E. Electronics and Communication Engineering</strong><br>
+2023 – 2027<br>
+CGPA: 7.10
+</div>
+<div>
+<strong>Higher Secondary (12th)</strong><br>
+Sri Krishna Matric Higher Secondary School<br>
+2022 – 2023<br>
+83.7%
+</div>
+<div>
+<strong>Secondary (10th)</strong><br>
+Sri Krishna Matric Higher Secondary School<br>
+2021<br>
+100%
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section>
+<h2>Technical Skills</h2>
+<ul>
+<li>Python</li>
+<li>C Programming</li>
+<li>Electronic Circuits</li>
+<li>Communication Systems</li>
+</ul>
+</section>
+
+<!-- SOFT SKILLS -->
+<section>
+<h2>Soft Skills</h2>
+<ul>
+<li>Management Skills</li>
+<li>Negotiation</li>
+<li>Critical Thinking</li>
+<li>Communication Skills</li>
+</ul>
+</section>
+
+<!-- LANGUAGES -->
+<section>
+<h2>Languages</h2>
+<ul>
+<li>Tamil</li>
+<li>English</li>
+</ul>
+</section>
+
+<!-- HOBBIES -->
+<section>
+<h2>Hobbies & Interests</h2>
+<ul>
+<li>Games</li>
+<li>Music</li>
+<li>Movies</li>
+</ul>
+</section>
+
+</main>
 
 <footer>
-    © 2026 Pushparaj M | Portfolio
+© 2026 Pushparaj M | Portfolio
 </footer>
 
 <script>
-    const totalFrames = 240;
-    const img = document.getElementById("frame");
+const totalFrames = 240;
+const img = document.getElementById("frame");
 
-    window.addEventListener("scroll", () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollFraction = scrollTop / docHeight;
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    const progress = scrollTop / maxScroll;
 
-        const frameIndex = Math.min(
-            totalFrames,
-            Math.max(1, Math.floor(scrollFraction * totalFrames))
-        );
+    const frame = Math.min(
+        totalFrames,
+        Math.max(1, Math.floor(progress * totalFrames))
+    );
 
-        img.src = `frames/ezgif-frame-${String(frameIndex).padStart(3, '0')}.jpg`;
-    });
+    img.src = `frames/ezgif-frame-${String(frame).padStart(3, '0')}.jpg`;
+});
 </script>
 
 </body>
