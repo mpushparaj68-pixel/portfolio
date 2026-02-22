@@ -1,231 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Pushparaj M | Resume Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Pushparaj M | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Segoe UI',sans-serif;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
 
-body{
-    background:#0a0a0a;
-    color:#ffffff;
-    overflow-x:hidden;
-}
+        body {
+            background: #0f172a;
+            color: #1f2933;
+            overflow-x: hidden;
+        }
 
-/* ===== FULL SCREEN BACKGROUND ANIMATION ===== */
+        /* ---------- BACKGROUND ANIMATION ---------- */
+        #bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.08;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-#animation-container{
-    position:fixed;
-    inset:0;
-    z-index:-1;
-    pointer-events:none;
-}
+        #bg-animation img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
 
-#animation-frame{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    opacity:0.14; /* slightly increased */
-}
+        /* ---------- CONTENT ---------- */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            margin: auto;
+            padding: 60px 20px;
+        }
 
-/* ===== Content Layout ===== */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 14px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
 
-.container{
-    width:85%;
-    max-width:1000px;
-    margin:auto;
-    padding:100px 20px;
-}
+        h1 {
+            font-size: 42px;
+            color: #0f172a;
+        }
 
-section{
-    margin-bottom:90px;
-}
+        h2 {
+            margin-bottom: 15px;
+            color: #1e40af;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 6px;
+        }
 
-h1{
-    font-size:42px;
-    margin-bottom:10px;
-}
+        p {
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
 
-h2{
-    font-size:24px;
-    margin-bottom:20px;
-    color:#00bfff;
-}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-p{
-    line-height:1.7;
-    margin-bottom:10px;
-}
+        ul {
+            padding-left: 18px;
+        }
 
-ul{
-    list-style:none;
-}
+        li {
+            margin-bottom: 8px;
+        }
 
-ul li{
-    margin-bottom:8px;
-}
+        .header {
+            text-align: center;
+        }
 
-.contact{
-    opacity:0.8;
-    font-size:15px;
-}
+        .contact {
+            margin-top: 10px;
+            font-weight: 500;
+            color: #374151;
+        }
 
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-footer{
-    text-align:center;
-    padding:40px 0;
-    opacity:0.6;
-    font-size:14px;
-}
-
-/* Proper scroll length */
-.spacer{
-    height:200vh; /* creates smooth scroll space */
-}
-</style>
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #cbd5f5;
+            font-size: 14px;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- Background Animation -->
-<div id="animation-container">
-    <img id="animation-frame" src="">
+<!-- BACKGROUND ANIMATION -->
+<div id="bg-animation">
+    <img id="frame" src="frames/ezgif-frame-001.jpg" alt="Background Animation">
 </div>
 
 <div class="container">
 
-<section>
-    <h1>Pushparaj M</h1>
-    <p class="contact">
-        📞 +91 7010165150 <br>
-        📧 mpushparaj68@gmail.com <br>
-        📍 Nangathur, Vikkravandi (Taluk), Villupuram – 605202
-    </p>
-</section>
+    <!-- HEADER -->
+    <div class="card header">
+        <h1>Pushparaj M</h1>
+        <p class="contact">
+            📞 +91 7010165150 | ✉️ mpushparaj68@gmail.com
+        </p>
+        <p class="contact">
+            Nangathur, Vikkravandi (Taluk), Villupuram – 605202
+        </p>
+    </div>
 
-<section>
-    <h2>Profile</h2>
-    <p>
-        Enthusiastic B.E. Electronics and Communication Engineering student
-        with strong basics in electronic circuits and communication systems.
-        Eager to start my career in a core electronics company where I can
-        apply my technical knowledge and improve my practical skills.
-        Quick learner with good problem-solving ability and teamwork skills.
-    </p>
-</section>
+    <!-- PROFILE -->
+    <div class="card">
+        <h2>Profile</h2>
+        <p>
+            Enthusiastic B.E. Electronics and Communication Engineering student
+            with strong basics in electronic circuits and communication systems.
+            Eager to start my career in a core electronics company where I can
+            apply my technical knowledge and improve my practical skills.
+            Quick learner with good problem-solving ability and teamwork skills.
+        </p>
+    </div>
 
-<section>
-    <h2>Education</h2>
-    <div class="grid">
-        <div>
-            <p><strong>10th Standard</strong></p>
-            <p>Sri Krishna Matric Higher Secondary School</p>
-            <p>100% (2021)</p>
-        </div>
-        <div>
-            <p><strong>12th Standard</strong></p>
-            <p>83.7%</p>
-        </div>
-        <div>
-            <p><strong>Bachelor of Engineering (ECE)</strong></p>
-            <p>2023 – 2027</p>
-            <p>CGPA: 7.10</p>
+    <!-- EDUCATION -->
+    <div class="card">
+        <h2>Education</h2>
+        <div class="grid">
+            <div>
+                <h3>Bachelor of Engineering (ECE)</h3>
+                <p>2023 – 2027</p>
+                <p>CGPA: 7.10</p>
+            </div>
+            <div>
+                <h3>Higher Secondary (12th)</h3>
+                <p>Sri Krishna Matric Higher Secondary School</p>
+                <p>2022 – 2023</p>
+                <p>83.7%</p>
+            </div>
+            <div>
+                <h3>Secondary (10th)</h3>
+                <p>Sri Krishna Matric Higher Secondary School</p>
+                <p>2021</p>
+                <p>100%</p>
+            </div>
         </div>
     </div>
-</section>
 
-<section>
-    <h2>Technical Skills</h2>
-    <ul>
-        <li>✔ Python</li>
-        <li>✔ C Programming</li>
-    </ul>
-</section>
+    <!-- SKILLS -->
+    <div class="card">
+        <h2>Technical Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>C Programming</li>
+            <li>Electronic Circuits</li>
+            <li>Communication Systems</li>
+        </ul>
+    </div>
 
-<section>
-    <h2>Soft Skills</h2>
-    <ul>
-        <li>✔ Management Skills</li>
-        <li>✔ Negotiation</li>
-        <li>✔ Critical Thinking</li>
-        <li>✔ Communication Skills</li>
-    </ul>
-</section>
+    <!-- SOFT SKILLS -->
+    <div class="card">
+        <h2>Soft Skills</h2>
+        <ul>
+            <li>Management Skills</li>
+            <li>Negotiation</li>
+            <li>Critical Thinking</li>
+            <li>Communication Skills</li>
+        </ul>
+    </div>
 
-<section>
-    <h2>Languages</h2>
-    <ul>
-        <li>✔ Tamil</li>
-        <li>✔ English</li>
-    </ul>
-</section>
+    <!-- LANGUAGES -->
+    <div class="card">
+        <h2>Languages</h2>
+        <ul>
+            <li>Tamil</li>
+            <li>English</li>
+        </ul>
+    </div>
 
-<section>
-    <h2>Hobbies</h2>
-    <ul>
-        <li>🎮 Games</li>
-        <li>🎵 Music</li>
-        <li>🎬 Movies</li>
-    </ul>
-</section>
+    <!-- HOBBIES -->
+    <div class="card">
+        <h2>Hobbies & Interests</h2>
+        <ul>
+            <li>Games</li>
+            <li>Music</li>
+            <li>Movies</li>
+        </ul>
+    </div>
 
 </div>
 
-<div class="spacer"></div>
-
 <footer>
-    © 2026 Pushparaj M | Resume Portfolio
+    © 2026 Pushparaj M | Portfolio
 </footer>
 
 <script>
-const frameCount = 240;
-const imgElement = document.getElementById("animation-frame");
-const frames = [];
-let currentFrame = 0;
+    const totalFrames = 240;
+    const img = document.getElementById("frame");
 
-/* Preload all frames */
-for(let i=1;i<=frameCount;i++){
-    const image = new Image();
-    const frameNumber = String(i).padStart(3,'0');
-    image.src = frames/ezgif-frame-${frameNumber}.jpg;
-    frames.push(image);
-}
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollFraction = scrollTop / docHeight;
 
-/* Set first frame */
-imgElement.src = frames[0].src;
+        const frameIndex = Math.min(
+            totalFrames,
+            Math.max(1, Math.floor(scrollFraction * totalFrames))
+        );
 
-/* Smooth Scroll Rendering */
-function animateFrames(){
-    const scrollTop = window.scrollY;
-    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollProgress = scrollTop / maxScroll;
-
-    const targetFrame = Math.min(
-        frameCount - 1,
-        Math.floor(scrollProgress * (frameCount - 1))
-    );
-
-    if(targetFrame !== currentFrame){
-        currentFrame = targetFrame;
-        imgElement.src = frames[currentFrame].src;
-    }
-
-    requestAnimationFrame(animateFrames);
-}
-
-requestAnimationFrame(animateFrames);
+        img.src = `frames/ezgif-frame-${String(frameIndex).padStart(3, '0')}.jpg`;
+    });
 </script>
 
 </body>
